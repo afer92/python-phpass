@@ -160,7 +160,7 @@ class PasswordHash:
             else:
                 rnd = self.get_random_bytes(16)
                 salt = self.gensalt_blowfish(rnd)
-                hx = _bcrypt_hashpw(pw, salt)
+                hx = _bcrypt_hashpw(pw, salt.encode('utf-8'))
                 if len(hx) == 60:
                     return hx
         if (not alg or alg == 'ext-des') and not self.portable_hashes:
