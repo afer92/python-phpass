@@ -200,7 +200,7 @@ if __name__ == "__main__":
         pw2 = getpass.getpass('Retype password: ')
         if pw == pw2:
             break
-        print "Both passwords must be the same"
+        print("Both passwords must be the same")
     t_hasher = PasswordHash(8, True)
-    print "Password hash: " + t_hasher.hash_password(pw)
+    print("Password hash: " + t_hasher.hash_password(pw))
 
